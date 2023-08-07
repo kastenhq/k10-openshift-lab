@@ -52,7 +52,7 @@ nav_order: 2
 
     *This indicates K10 was able to successfully authenticate and access the specified object storage bucket.*
 
-📖 Part 1. Create A Policy
+📖 Part 2. Create A Policy
 ==========================
 
 *Before performing a Kasten install, the "Primer Script" can quickly spot any potential problems with our cluster configuration.*
