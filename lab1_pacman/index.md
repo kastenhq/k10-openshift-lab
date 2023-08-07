@@ -19,7 +19,7 @@ nav_order: 1
     helm repo update
     ```
 
-3. Open a new terminal on the bastion host and start a `--watch` command to monitor Pod changes in the `pacman-ha` namespace:
+3. Open a new terminal on the bastion host and start a `--watch` command to monitor Pod changes in the `pacman` namespace:
 
     ```bash
     kubectl get pods -n pacman -o wide --watch
