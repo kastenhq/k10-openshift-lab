@@ -6,10 +6,6 @@ nav_order: 2
 📖 Part 1. Configure an S3-compatible Object Store for Backup
 ======================================
 
-1.  Retrive the URL of the Kasten instance by navigating to Networing > Routes
-    ![Kasten Route](./assets/images/kasten_route.png)
-    *Ensure you have the kasten-io project selected*
-
 *Before we can begin protecting our apps, we need to define a location for Kasten to export backup off of the cluster and primary storage.*
 
 *As part of the lab environment staging, a MinIO Object Storage server has already been deployed to your cluster. This server provides a single bucket, `kasten-bucket`, that you will use as a backup target.*
@@ -18,21 +14,25 @@ nav_order: 2
   >
   > This is a lab environment. In production, exporting your backups to the same storage as what you're trying to protect would really defeat the purpose - don't you think?
 
-1. From the terminal on the bastion host, resolve the URL of your MinIO server and copy the result to your clipboard:
+1.  Retrive the URL of the Kasten instance by navigating to Networing > Routes
+    ![Kasten Route](./assets/images/kasten_route.png)
+    *Ensure you have the kasten-io project selected*
+
+2. From the terminal on the bastion host, resolve the URL of your MinIO server and copy the result to your clipboard:
 
     ```bash
     echo http://$(hostname)
     ```
 
-2. From the ***K10 Dashboard*** tab, select ***Settings***.
+3. From the ***K10 Dashboard*** tab, select ***Settings***.
 
-    ![settings](./assets/settings.png)
+    ![settings](./assets/images/settings.png)
 
-3. Under ***Locations***, click the ***+ New Profile*** button.
+4. Under ***Locations***, click the ***+ New Profile*** button.
 
-    ![new profile](./assets/new-profile.png)
+    ![new profile](./assets/images/new-profile.png)
 
-4. Fill out the following fields:
+5. Fill out the following fields:
 
     | **Field** | **Value** |
     |---|---|
@@ -44,11 +44,11 @@ nav_order: 2
     | ***Region*** | Leave blank |
     | ***Enable Immutable Backups*** | Leave unselected |
 
-    ![location profile](./assets/location-profile.png)
+    ![location profile](./assets/images/location-profile.png)
 
-5. Click ***Save Profile*** and verify the ***STATUS*** of your Location Profile is ***Valid***.
+6. Click ***Save Profile*** and verify the ***STATUS*** of your Location Profile is ***Valid***.
 
-    ![valid profile](./assets/valid-profile.png)
+    ![valid profile](./assets/images/valid-profile.png)
 
     *This indicates K10 was able to successfully authenticate and access the specified object storage bucket.*
 
@@ -59,38 +59,38 @@ nav_order: 2
 
 1. From the 👍 ***K10 Dashboard*** tab, click ***Applications*** to view all applications discovered by K10 on the cluster.
 
-    ![click apps](./assets/click-apps.png)
+    ![click apps](./assets/images/click-apps.png)
 
-1. Under your `pacman` application, click the ***Create a Policy*** button.
+2. Under your `pacman` application, click the ***Create a Policy*** button.
 
-    ![create policy button](./assets/create-policy-button.png)
+    ![create policy button](./assets/images/create-policy-button.png)
 
-1. By default, the policy will generate hourly snapshots of the application with a standard retention policy. Leave these defaults.
+3. By default, the policy will generate hourly snapshots of the application with a standard retention policy. Leave these defaults.
 
-2. Toggle ***Enable Backups via Snapshot Exports*** to the ON position and select `minio` as the ***Export Location Profile***.
+4. Toggle ***Enable Backups via Snapshot Exports*** to the ON position and select `minio` as the ***Export Location Profile***.
 
-    ![enable exports](./assets/enable-exports.png)
+    ![enable exports](./assets/images/enable-exports.png)
 
-1. Under ***Select Applications*** observe that we are explicitly protecting all resources in the `pacman` namespace.
+5. Under ***Select Applications*** observe that we are explicitly protecting all resources in the `pacman` namespace.
 
     *A single Kasten policy can also protect multiple namespaces, and can even do so dynamically via Kubernetes labels*.
 
-1. Leave all other defaults and click ***Create Policy***.
+6. Leave all other defaults and click ***Create Policy***.
 
-    ![create policy](./assets/create-policy.png)
+    ![create policy](./assets/images/create-policy.png)
 
     ```bash
     helm repo add kasten https://charts.kasten.io/
     helm repo update
     ```
 
-1. You will be returned to the ***Policies*** page. On your new `pacman-backup` Policy, click the ***YAML*** button to view the Kubernetes manifest.
+7. You will be returned to the ***Policies*** page. On your new `pacman-backup` Policy, click the ***YAML*** button to view the Kubernetes manifest.
 
-    ![policy yaml](./assets/policy-yaml.png)
+    ![policy yaml](./assets/images/policy-yaml.png)
 
     *As native Kubernetes resources, K10 policies, profiles, and even running backups or restores can be easily implemented via `kubectl` or API. Exposing the YAML through the UI makes it easy for administrators to copy and modify existing examples of K10 resources or actions.*
 
-1. Click ***Cancel*** to close the YAML window.
+8. Click ***Cancel*** to close the YAML window.
 
 🏁 Part 3. Takeaways
 ====================
@@ -98,6 +98,6 @@ nav_order: 2
 - Local snapshots are not backups
 - Configuring off-cluster storage for backup is a good idea
 - Configuring an S3-compatible bucket in Kasten K10 can be done in a few clicks
-- 
+- Because Kasten is K8s-native, all actions, policies, resources can be implemented using kubectl commands or API
 
 Click ***Next*** to proceed to the next exercise.
