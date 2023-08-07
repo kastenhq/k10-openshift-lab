@@ -17,4 +17,9 @@ These labs are written with the assumption that you have an existing RedHat Open
 
 While the Kasten K10 Operator has already been deployed within the demo environment, you can run through the guided steps using the embedded experience below:
 
-<iframe class="sl-demo" src="https://app.storylane.io/demo/hfr76e40ea6y" name="sl-embed" allow="fullscreen; camera; microphone" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe>
+<div>
+        <script src="https://js.storylane.io/js/v1/storylane.js"></script>
+        <div class="sl-embed" style="position:relative;padding-bottom:56.25%;width:100%;height:0;transform:scale(1)">
+          <iframe class="sl-demo" src="https://app.storylane.io/demo/hfr76e40ea6y" name="sl-embed" allow="fullscreen; camera; microphone" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe>
+        </div>
+</div>
