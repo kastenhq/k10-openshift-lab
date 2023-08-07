@@ -17,6 +17,8 @@ These labs are written with the assumption that you have an existing RedHat Open
 
 While the Kasten K10 Operator has already been deployed within the demo environment, you can run through the guided steps using the demo experience below:
 
+    ![Operator Install Preview](./assets/images/operator_install_preview.gif)
+
 <div>
         <script src="https://js.storylane.io/js/v1/storylane.js"></script>
           <button style="z-index:999999;padding:7px 15px;border-width:2px;border-style:solid;border-radius:8px;font-weight:600;font-size:18px;filter:drop-shadow(0px 0px 15px rgba(26, 19, 72, 0.25));font-family:Guardian Sans, Arial, sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;background:#4C5BDC;border-color:#FFFFFF;color:#FFFFFF" onclick="Storylane.Play({type: 'popup', demo_type: 'image', width: 2560, height: 1442, scale: '0.95', demo_url: 'https://app.storylane.io/demo/hfr76e40ea6y', padding_bottom: 'calc(56.33% + 27px)'})">TAKE A TOUR</button>
