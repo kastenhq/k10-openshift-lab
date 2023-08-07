@@ -1,5 +1,6 @@
 remote_theme: just-the-docs/just-the-docs
-logo: "/assets/images/logo-kasten.svg"
+color_scheme: dark
+logo: "/assets/images/logo-kasten.png"
 
 # Enable or disable the site search
 # Supports true (default) or false
