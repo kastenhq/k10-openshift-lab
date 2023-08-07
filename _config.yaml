@@ -1,6 +1,7 @@
 remote_theme: just-the-docs/just-the-docs
 color_scheme: dark
 logo: "/assets/images/logo-kasten.png"
+favicon_ico: "/assets/images/K.png"
 
 # Enable or disable the site search
 # Supports true (default) or false

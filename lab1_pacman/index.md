@@ -35,7 +35,7 @@ nav_order: 1
 
     *It will take a few moments for the command to return, this is normal!*
 
-5. Return to the second terminal and verify the Chart has successfully provisioned 3 Pods, `pacman` and `pacman-mongodb-*`
+5. Return to the second terminal and verify the Chart has successfully provisioned 3 Pods, `pacman-*` and `pacman-mongodb-*`
 
     ![pacman pods](./assets/images/pacman_pods.png)
 
@@ -47,12 +47,18 @@ nav_order: 1
 
 2. Ensure you have the pacman project selected.  You should see an entry named pacman-route
 
+    ![pacman route](./assets/images/pacman_route.png)
+
 3. Click on the Location to launch pacman
 
 4. Play a short game, and enter your name once you're done to add your name to the leaderboard.
 
+    ![pacman game](./assets/images/pacman_game.png)
+
 🏁 Part 3. Takeaways
 ====================
-- Deploying applications from helm charts is super simple
+- Deploying applications from helm charts is quick and easy
+- OpenShift makes exposing applications via routes simple
+- Pacman is still fun
 
 Click ***Next*** to proceed to the next exercise.
