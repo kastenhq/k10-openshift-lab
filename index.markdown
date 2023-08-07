@@ -6,7 +6,7 @@ nav_order: 0
 
 # Kasten by Veeam and Red Hat OpenShift Demo
 
-![Kasten and OpenShift Logos](/assets/images/joint_logo.jpg "Kasten by Veeam and Red Hat OpenShift")
+![Kasten and OpenShift Logos](./assets/images/joint_logo.jpg "Kasten by Veeam and Red Hat OpenShift")
 
 Welcome to the **Kasten by Veeam and Red Hat OpenShift Demo**.  In the labs contained on this site, we will be exploring how to quickly and easily implement Data Protection for Red Hat OpenShift clusters using Kasten K10 by Veeam.
 
@@ -15,11 +15,10 @@ For more information on how to deploy, configure, and manage Kasten K10, visit o
 {: .note }
 These labs are written with the assumption that you have an existing RedHat OpenShift cluster deployed along with the [Kasten K10 Operator](https://marketplace.redhat.com/en-us/products/kasten-k10).  If you are a RedHat employee, you can deploy the required infrastructure by visiting [demo.redhat.com](https://demo.redhat.com).
 
-While the Kasten K10 Operator has already been deployed within the demo environment, you can run through the guided steps using the embedded experience below:
+While the Kasten K10 Operator has already been deployed within the demo environment, you can run through the guided steps using the demo experience below:
 
 <div>
         <script src="https://js.storylane.io/js/v1/storylane.js"></script>
-        <div class="sl-embed" style="position:relative;padding-bottom:56.25%;width:100%;height:0;transform:scale(1)">
-          <iframe class="sl-demo" src="https://app.storylane.io/demo/hfr76e40ea6y" name="sl-embed" allow="fullscreen; camera; microphone" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe>
-        </div>
+          <button style="z-index:999999;padding:7px 15px;border-width:2px;border-style:solid;border-radius:8px;font-weight:600;font-size:18px;filter:drop-shadow(0px 0px 15px rgba(26, 19, 72, 0.25));font-family:Guardian Sans, Arial, sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;background:#4C5BDC;border-color:#FFFFFF;color:#FFFFFF" onclick="Storylane.Play({type: 'popup', demo_type: 'image', width: 2560, height: 1442, scale: '0.95', demo_url: 'https://app.storylane.io/demo/hfr76e40ea6y', padding_bottom: 'calc(56.33% + 27px)'})">TAKE A TOUR</button>
+</div>
 </div>
