@@ -55,6 +55,8 @@ nav_order: 1
 
     ![pacman game](./assets/images/pacman_game.png)
 
+    ![pacman leaderboard](./assets/images/pacman_leaderboard.png)
+
 🏁 Part 3. Takeaways
 ====================
 - Deploying applications from helm charts is quick and easy
