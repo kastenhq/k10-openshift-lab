@@ -22,11 +22,11 @@ nav_order: 3
 
 4. Click on the running action to monitor its detailed status
 
-    ![Action Details](./asset/images/action_details.png)
+    ![Action Details](./assets/images/action_details.png)
 
 5. All steps of the action should run successfully
 
-    ![Action Completed](./asset/images/action_completed.png)
+    ![Action Completed](./assets/images/action_completed.png)
 
 
 Part 2. Scores Gone
@@ -91,3 +91,5 @@ Part 3. Recover Our Score
 - We can easily monitor actions via the Kasten UI
 - We have granular control on how we restore from backup, including whether from on-cluster or exported storage
 - We have granular control over which components we wish to recover and/or overwrite
+
+Using the menu to the left, click **Lab 3 - Backup and Restore a Workload** to proceed to the next lab

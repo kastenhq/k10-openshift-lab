@@ -61,4 +61,4 @@ nav_order: 1
 - OpenShift makes exposing applications via routes simple
 - Pacman is still fun
 
-Click ***Next*** to proceed to the next exercise.
+Using the menu to the left, click **Lab 2 - Configure Kasten K10** to proceed to the next lab
