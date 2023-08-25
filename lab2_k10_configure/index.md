@@ -37,7 +37,7 @@ _k10.kasten.io/is-snapshot-class: "true"_
   >
   > This is a lab environment. In production, exporting your backups to the same storage as what you're trying to protect would really defeat the purpose - don't you think?
 
-1.  Retrive the URL of the Kasten instance by navigating to Networing > Routes in the OpenShift console
+1.  Find the URL of the Kasten instance by navigating to Networing > Routes in the OpenShift console. Click the Location URL
     ![Kasten Route](./assets/images/kasten_route.png)
     *Ensure you have the kasten-io project selected*
 
@@ -60,8 +60,6 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
 4. Under ***Locations***, click the ***+ New Profile*** button.
 
-    ![new profile](./assets/images/new-profile.png)
-
 5. Fill out the following fields:
 
     | **Field** | **Value** |
@@ -71,10 +69,10 @@ _k10.kasten.io/is-snapshot-class: "true"_
     | ***S3 Access Key*** | `minioaccess` |
     | ***S3 Secret*** | `miniosecret` |
     | ***Endpoint*** | Paste the URL from Step 2<br>(ex. `http://<bastion_host_FQDN>:9000`) |
-    | ***Region*** | Leave blank |
+    | ***Region*** | us-east-2 |
     | ***Enable Immutable Backups*** | Leave unselected |
 
-    ![location profile](./assets/images/location-profile.png)
+    ![new profile](./assets/images/new-profile.png)
 
 6. Click ***Save Profile*** and verify the ***STATUS*** of your Location Profile is ***Valid***.
 
@@ -91,7 +89,7 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
     ![click apps](./assets/images/click-apps.png)
 
-2. Under your `pacman` application, click the ***Create a Policy*** button.
+2. Type `pacman` in the filter search bar, then click the ***Create a Policy*** button.
 
     ![create policy button](./assets/images/create-policy-button.png)
 
@@ -103,7 +101,8 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
 5. Under ***Select Applications*** observe that we are explicitly protecting all resources in the `pacman` namespace.
 
-    *A single Kasten policy can also protect multiple namespaces, and can even do so dynamically via Kubernetes labels*.
+    {: .note }
+    A single Kasten policy can also protect multiple namespaces, and can even do so dynamically via Kubernetes labels.
 
 6. Leave all other defaults and click ***Create Policy***.
 
@@ -113,7 +112,7 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
     ![policy yaml](./assets/images/policy-yaml.png)
 
-    *As native Kubernetes resources, K10 policies, profiles, and even running backups or restores can be easily implemented via `kubectl` or API. Exposing the YAML through the UI makes it easy for administrators to copy and modify existing examples of K10 resources or actions.*
+    As native Kubernetes resources, K10 policies, profiles, and even running backups or restores can be easily implemented via `kubectl` or API. Exposing the YAML through the UI makes it easy for administrators to copy and modify existing examples of K10 resources or actions.
 
 8. Click ***Cancel*** to close the YAML window.
 

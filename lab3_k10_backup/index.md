@@ -32,7 +32,7 @@ nav_order: 3
 Part 2. Scores Gone
 =====================
 
-1. Return to the Pacman tab in your browser and click "View Highscore List" or if the game is playing, hit <space bar> and click __High Score__
+1. Return to the Pacman tab in your browser and click "View Highscore List" or if the game is playing, hit the space bar and click **High Score**
 
     ![Leaderboard](./assets/images/pacman_leaderboard.png)
 
@@ -43,7 +43,8 @@ Part 2. Scores Gone
     oc exec -it deploy/pacman-mongodb -n pacman -- mongosh pacman --authenticationDatabase admin -u root -p $MONGODB_ROOT_PASSWORD --eval 'db.dropDatabase();'
     ```
 
-2. Return to the Pacman tab in your browser and refresh the page. Click __High Score__ __!!OH NO YOUR HIGH SCORE IS GONE!!__
+2. Return to the Pacman tab in your browser and refresh the page. Click __High Score__.
+   __!!OH NO YOUR HIGH SCORE IS GONE!!__
 
     ![no high scores](./assets/images/no_highscores.png)
 
@@ -60,24 +61,25 @@ Part 3. Recover Our Score
 
 3. Click the most recent backup.
 
-    { .note }
+    { ._note }
     There are two options from which to restore. The blue box is the local cluster backup, whereas the green box with the title "Exported" is the exported backup which is stored on our S3 object storage
 
     Click Today, #:## in the _blue box_ to restore from the local cluster snapshot
 
     ![Restore Today](./assets/images/restore_today.png)
 
-4. Scroll down and click __Deselect All Artifacts__ then click the tick box next to the _pacman-mongodb_ item under the _Snapshot (1)_ section
+4. Scroll down and click **Deselect All Artifacts** then click the tick box next to the _pacman-mongodb_ item under the _Snapshot (1)_ section
 
     ![Restore Volume](./assets/images/volume_only_restore.png)
 
-   Click Restore.
+5. Click Restore.
    
-5. Click on the Restore action. All phases should complete successfully
+6. Click on the Restore action. All phases should complete successfully
 
     ![Restore Completed](./assets/images/restore_completed.png)
 
-6. Return to the pacman tab and refresh the tab.  Click High Score. Note that your high score is back.
+7. Return to the pacman tab and refresh the tab.  Click **High Score**. Our high score is back!
+   **REJOICE!**
 
     ![Leaderboard](./assets/images/pacman_leaderboard.png)
 
