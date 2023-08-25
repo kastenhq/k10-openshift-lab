@@ -3,7 +3,30 @@ layout: default
 title: Lab 2 - Configure Kasten K10
 nav_order: 2
 ---
-📖 Part 1. Configure an S3-compatible Object Store for Backup
+
+📖 Part 1. Configure cluster storage for K10
+======================================
+*Prior to configuring backups, we need to ensure our cluster storage is capable of performing snapshots of our persistent data workloads.
+Because our cluster is deployed on top of Amazon EC2, we can leverage EBS storage and it's associated CSI driver to perform volume snapshot operations.
+
+To do so, we need to ensure our VolumeSnapshotClass object created on the cluster for the ebs.csi.aws.com provisioner is correctly annotated.  We need to add the annotation
+_k10.kasten.io/is-snapshot-class: "true"_
+
+1. On the bastion host, run the following command to patch the csi-aws-vsc VolumeSnapshotClass so K10 can use it to perform snapshot operations
+
+    ```bash
+    oc annotate volumesnapshotclass $(oc get volumesnapshotclass \
+    -o=jsonpath='{.items[?(@.metadata.annotations.snapshot\.storage\.kubernetes\.io\/is-default-class=="true")].metadata.name}') \
+    k10.kasten.io/is-snapshot-class=true
+    ```
+
+2. Run the following command to validate the VolumeSnapshotClass has been annotated
+
+    ```bash
+    oc get volumesnapshotclasses.snapshot.storage.k8s.io csi-aws-vsc -o yaml
+    ```
+
+📖 Part 2. Configure an S3-compatible Object Store for Backup
 ======================================
 
 *Before we can begin protecting our apps, we need to define a location for Kasten to export backup off of the cluster and primary storage.*
@@ -14,17 +37,24 @@ nav_order: 2
   >
   > This is a lab environment. In production, exporting your backups to the same storage as what you're trying to protect would really defeat the purpose - don't you think?
 
-1.  Retrive the URL of the Kasten instance by navigating to Networing > Routes
+1.  Retrive the URL of the Kasten instance by navigating to Networing > Routes in the OpenShift console
     ![Kasten Route](./assets/images/kasten_route.png)
     *Ensure you have the kasten-io project selected*
 
-2. From the terminal on the bastion host, resolve the URL of your MinIO server and copy the result to your clipboard:
+2. From the environment configuration details, copy the hostname of your bastion host. It should look similar to:
 
     ```bash
-    echo http://$(hostname)
+    bastion.xyza.sandbox1234.opentlc.com
     ```
 
-3. From the ***K10 Dashboard*** tab, select ***Settings***.
+3. Enter your email and organization and accept the EULA:
+   ![EULA](./assets/images/eula.png)
+
+4. Take a quick tour if you'd like, otherwise just click "No, Thanks"
+
+    ![Take a Tour](./assets/images/take_a_tour.png)
+
+4.  From the ***K10 Dashboard*** tab, select ***Settings***.
 
     ![settings](./assets/images/settings.png)
 
@@ -40,7 +70,7 @@ nav_order: 2
     | ***Storage Provider*** | Select *S3 Compatible*<br>(NOTE: This is a separate option from Amazon S3) |
     | ***S3 Access Key*** | `minioaccess` |
     | ***S3 Secret*** | `miniosecret` |
-    | ***Endpoint*** | Paste the URL from Step 1<br>(ex. `http://<ipaddress>:31000`) |
+    | ***Endpoint*** | Paste the URL from Step 2<br>(ex. `http://<bastion_host_FQDN>:9000`) |
     | ***Region*** | Leave blank |
     | ***Enable Immutable Backups*** | Leave unselected |
 
@@ -52,7 +82,7 @@ nav_order: 2
 
     *This indicates K10 was able to successfully authenticate and access the specified object storage bucket.*
 
-📖 Part 2. Create A Policy
+📖 Part 3. Create A Policy
 ==========================
 
 *Before performing a Kasten install, the "Primer Script" can quickly spot any potential problems with our cluster configuration.*
@@ -79,11 +109,6 @@ nav_order: 2
 
     ![create policy](./assets/images/create-policy.png)
 
-    ```bash
-    helm repo add kasten https://charts.kasten.io/
-    helm repo update
-    ```
-
 7. You will be returned to the ***Policies*** page. On your new `pacman-backup` Policy, click the ***YAML*** button to view the Kubernetes manifest.
 
     ![policy yaml](./assets/images/policy-yaml.png)
@@ -92,7 +117,8 @@ nav_order: 2
 
 8. Click ***Cancel*** to close the YAML window.
 
-🏁 Part 3. Takeaways
+
+🏁 Part 4. Takeaways
 ====================
 
 - Local snapshots are not backups

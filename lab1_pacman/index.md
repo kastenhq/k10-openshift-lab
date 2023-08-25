@@ -12,38 +12,36 @@ nav_order: 1
     kubectl create namespace pacman
     ```
 
-2. Add the repository that will be used to install the `mongodb` Helm Chart:
+2. Add the repository to install Pacman:
 
     ```
     helm repo add pacman https://shuguet.github.io/pacman/
     helm repo update
     ```
 
-3. Open a new terminal on the bastion host and start a `--watch` command to monitor Pod changes in the `pacman` namespace:
+3. Run the following to install the `pacman/pacman` Helm Chart:
 
     ```bash
-    kubectl get pods -n pacman -o wide --watch
-    ```
-
-    *You should not expect the command to return anything immediately as there are currently no Pods in `pacman`*.
-
-4. Switch to the original terminal and run the following to install the `pacman/pacman` Helm Chart with a highly available architecture:
-
-    ```bash
-    helm install pacman pacman/pacman -n pacman --set route.create=true
+    helm install pacman pacman/pacman -n pacman \
+    --set route.create=true \
+    --set mongodb.containerSecurityContext.enabled=false \
+    --set mongodb.podSecurityContext.enabled=false
     ```
 
     *It will take a few moments for the command to return, this is normal!*
 
-5. Return to the second terminal and verify the Chart has successfully provisioned 3 Pods, `pacman-*` and `pacman-mongodb-*`
+5. Return to the OpenShift Console in your browser and verify the Chart has successfully provisioned 3 Pods, `pacman-*` and `pacman-mongodb-*`
 
     ![pacman pods](./assets/images/pacman_pods.png)
+
+    {: .note }
+    Ensure you have the pacman project selected in the Project drop-down
 
 
 📖 Part 2. Let's Play some Pacman
 ======================================
 
-1. Now that our pacman application has been deployed, let's play some pacman. First we need to access the Pacman front end.  To find the URL, within the bastion host, open a browser and navigate within the OpenShift console to Networking > Routes
+1. Now that our pacman application has been deployed, let's play some pacman. First we need to access the Pacman front end.  To find the URL, within the OpenShift console and navigate within the OpenShift console to Networking > Routes
 
 2. Ensure you have the pacman project selected.  You should see an entry named pacman-route
 
