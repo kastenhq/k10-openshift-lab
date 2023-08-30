@@ -16,7 +16,7 @@ nav_order: 3
 
     ![Run Once Continue](./assets/images/run_once_continue.png)
 
-3. Click _< Dashboard_ in the upper-left corner to monitor the action on the main dashboard
+3. Click **< Dashboard** in the upper-left corner to monitor the action on the main dashboard
 
     ![Running Action](./assets/images/running_action.png)
 
@@ -24,7 +24,7 @@ nav_order: 3
 
     ![Action Details](./assets/images/action_details.png)
 
-5. All steps of the action should run successfully
+5. After a few minutes, all steps of the action should run successfully
 
     ![Action Completed](./assets/images/action_completed.png)
 
@@ -51,7 +51,7 @@ Part 2. Scores Gone
 Part 3. Recover Our Score
 ==========================
 
-1. No fear, let's restore our backup.  Click on the Kasten K10 tab in your browser and on the main dashboard, click __Compliant__ in the Applications modal.
+1. No fear, let's restore our backup.  Click on the Kasten K10 tab in your browser and return to the main dashboard by clicking on **< Dashboard**, click __Compliant__ in the Applications modal.
 
     ![Compliant](./assets/images/compliant.png)
 
@@ -61,7 +61,7 @@ Part 3. Recover Our Score
 
 3. Click the most recent backup.
 
-    { ._note }
+    {: .note }
     There are two options from which to restore. The blue box is the local cluster backup, whereas the green box with the title "Exported" is the exported backup which is stored on our S3 object storage
 
     Click Today, #:## in the _blue box_ to restore from the local cluster snapshot
@@ -73,8 +73,10 @@ Part 3. Recover Our Score
     ![Restore Volume](./assets/images/volume_only_restore.png)
 
 5. Click Restore.
+
+6. Return to the Dashboard by clicking on the **< Dashboard** link in the upper left corner, then click on the running Restore Action to monitor the action
    
-6. Click on the Restore action. All phases should complete successfully
+6. After a minute or two all phases should complete successfully
 
     ![Restore Completed](./assets/images/restore_completed.png)
 
@@ -92,4 +94,4 @@ Part 3. Recover Our Score
 - We have granular control on how we restore from backup, including whether from on-cluster or exported storage
 - We have granular control over which components we wish to recover and/or overwrite
 
-Using the menu to the left, click **Lab 3 - Backup and Restore a Workload** to proceed to the next lab
+Congratulations, you finished the Kasten K10 Demo on Red Hat OpenShift! To learn more visit [kasten.io](https://kasten.io)
