@@ -19,7 +19,7 @@ While the Kasten K10 Operator has already been deployed within the demo environm
 
 <div>
         <script src="https://js.storylane.io/js/v1/storylane.js"></script>
-          <button style="z-index:999999;padding:7px 15px;border-width:2px;border-style:solid;border-radius:8px;font-weight:600;font-size:18px;filter:drop-shadow(0px 0px 15px rgba(26, 19, 72, 0.25));font-family:Guardian Sans, Arial, sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;background:#4C5BDC;border-color:#FFFFFF;color:#FFFFFF" onclick="Storylane.Play({type: 'popup', demo_type: 'image', width: 2560, height: 1442, scale: '0.95', demo_url: 'https://app.storylane.io/demo/hfr76e40ea6y', padding_bottom: 'calc(56.33% + 27px)'})">TAKE A TOUR</button>
+          <button style="none;" onclick="Storylane.Play({type: 'popup', demo_type: 'image', width: 2560, height: 1442, scale: '0.95', demo_url: 'https://app.storylane.io/demo/hfr76e40ea6y', padding_bottom: 'calc(56.33% + 27px)'})">TAKE A TOUR</button>
 </div>
 
 ## Let's get Started
@@ -29,5 +29,5 @@ Buckle up, let's learn about protecting our OpenShift containerized and VM workl
 __Estimated time to complete the labs:__ 20 minutes
 
 <div>
-<button style="z-index:999999;padding:7px 15px;border-width:2px;border-style:solid;border-radius:8px;font-weight:600;font-size:18px;filter:drop-shadow(0px 0px 15px rgba(26, 19, 72, 0.25));font-family:Guardian Sans, Arial, sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;background:#4C5BDC;border-color:#FFFFFF;color:#FFFFFF" onclick="Storylane.Play({type: 'popup', demo_type: 'image', width: 2560, height: 1442, scale: '0.95', demo_url: './lab1_pacman', padding_bottom: 'calc(56.33% + 27px)'})">LAB 1</button>
+<a style="z-index:999999;padding:7px 15px;border-width:2px;border-style:solid;border-radius:8px;font-weight:600;font-size:18px;filter:drop-shadow(0px 0px 15px rgba(26, 19, 72, 0.25));font-family:Guardian Sans, Arial, sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;background:#4C5BDC;border-color:#FFFFFF;color:#FFFFFF" href="./lab1_pacman">LAB 1</a>
 </div>
