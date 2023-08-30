@@ -112,7 +112,7 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
     ![policy yaml](./assets/images/policy-yaml.png)
 
-    As native Kubernetes resources, K10 policies, profiles, and even running backups or restores can be easily implemented via `kubectl` or API. Exposing the YAML through the UI makes it easy for administrators to copy and modify existing examples of K10 resources or actions.
+    As native Kubernetes resources, K10 policies, profiles, and even running backups or restores can be easily implemented via `oc` or API. Exposing the YAML through the UI makes it easy for administrators to copy and modify existing examples of K10 resources or actions.
 
 8. Click ***Cancel*** to close the YAML window.
 
@@ -123,6 +123,6 @@ _k10.kasten.io/is-snapshot-class: "true"_
 - Local snapshots are not backups
 - Configuring off-cluster storage for backup is a good idea
 - Configuring an S3-compatible bucket in Kasten K10 can be done in a few clicks
-- Because Kasten is K8s-native, all actions, policies, resources can be implemented using kubectl commands or API
+- Because Kasten is K8s-native, all actions, policies, resources can be implemented using oc commands or API
 
 Click ***Next*** to proceed to the next exercise.

@@ -9,7 +9,7 @@ nav_order: 1
 1. Using the bastion host, begin by creating a new namespace for your application:
 
     ```bash
-    kubectl create namespace pacman
+    oc create namespace pacman
     ```
 
 2. Add the repository to install Pacman:
