@@ -69,7 +69,9 @@ Part 3. Recover Our Score
 
     {: .note }
     > There are two options from which to restore. The blue box is the local cluster backup, whereas the green box with the title "Exported" is the exported backup which is stored on our S3
-    > object storage. In the event of an accidental deletion, restoring from local cluster backup is sufficient, but if we were facing the result of a ransomware attack
+    > object storage.
+    >
+    > In the event of an accidental deletion, restoring from local cluster backup is sufficient, but if we were facing the result of a ransomware attack
     > we would likely want to restore from the S3 bucket.  For the purposes of this lab, we'll just the local cluster backup since restore time will be slightly faster
 
 
@@ -96,7 +98,7 @@ Part 3. Recover Our Score
 
     ![Leaderboard](./assets/images/pacman_leaderboard.png)
 
-🏁 Part 4. Takeaways
+Part 4. Takeaways
 ====================
 
 - Kasten K10 automatically interrogates and detects namespaces on the cluster
@@ -104,6 +106,10 @@ Part 3. Recover Our Score
 - We can easily monitor actions via the Kasten UI
 - We have granular control on how we restore from backup, including whether from on-cluster or exported storage
 - We have granular control over which components we wish to recover and/or overwrite
+
+
+🏁 Part 5. Conclusion
+=====================
 
 Congratulations, you finished the Kasten K10 Demo on Red Hat OpenShift! While we only covered a simple
 backup and restore in this demo, Kasten can do much more, such as:
@@ -116,4 +122,4 @@ backup and restore in this demo, Kasten can do much more, such as:
 - Integrate with CI/CD pipelines to automatically backup and protect workloads as they are deployed
 
 
-To learn more visit [kasten.io](https://kasten.io).
+**To learn more visit [kasten.io](https://kasten.io)**

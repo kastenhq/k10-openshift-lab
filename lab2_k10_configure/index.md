@@ -33,8 +33,7 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
 *As part of the lab environment staging, a MinIO Object Storage server has already been deployed to your cluster. This server provides a single bucket, `kasten-bucket`, that you will use as a backup target.*
 
-  > 🚩 ***WARNING***
-  >
+  {: .warning }
   > This is a lab environment. In production, exporting your backups to the same storage as what you're trying to protect would really defeat the purpose - don't you think?
 
 1.  Find the URL of the Kasten instance by navigating to Networing > Routes in the OpenShift console. Click the Location URL
