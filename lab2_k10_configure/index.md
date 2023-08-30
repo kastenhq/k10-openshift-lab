@@ -41,24 +41,30 @@ _k10.kasten.io/is-snapshot-class: "true"_
     ![Kasten Route](./assets/images/kasten_route.png)
     *Ensure you have the kasten-io project selected*
 
-2. From the environment configuration details, copy the hostname of your bastion host. It should look similar to:
+2.  When prompted for login details, enter the following:
 
-    ```bash
-    bastion.xyza.sandbox1234.opentlc.com
-    ```
+      | **Username** | **Password** |
+      |---|---|
+      | kasten | kasten123 |
 
-3. Enter your email and organization and accept the EULA:
+3. When prompted, enter your email and organization and accept the EULA:
    ![EULA](./assets/images/eula.png)
 
 4. Take a quick tour if you'd like, otherwise just click "No, Thanks"
 
     ![Take a Tour](./assets/images/take_a_tour.png)
 
-4.  From the ***K10 Dashboard*** tab, select ***Settings***.
+5.  From the ***K10 Dashboard*** tab, select ***Settings***.
 
     ![settings](./assets/images/settings.png)
 
-4. Under ***Locations***, click the ***+ New Profile*** button.
+6. Under ***Locations***, click the ***+ New Profile*** button.
+
+7. From the environment configuration details for your cluster, copy the hostname of your bastion host to your clipboard (the part after _lab-user@_). It should look similar to:
+
+    ```bash
+    bastion.xyza.sandbox1234.opentlc.com
+    ```
 
 5. Fill out the following fields:
 
@@ -68,13 +74,15 @@ _k10.kasten.io/is-snapshot-class: "true"_
     | ***Storage Provider*** | Select *S3 Compatible*<br>(NOTE: This is a separate option from Amazon S3) |
     | ***S3 Access Key*** | `minioaccess` |
     | ***S3 Secret*** | `miniosecret` |
-    | ***Endpoint*** | Paste the URL from Step 2<br>(ex. `http://<bastion_host_FQDN>:9000`) |
+    | ***Endpoint*** | Paste the URL from Step 2<br>(eg. `http://<bastion_host_FQDN>:9000`) |
+    | ***Skip certificate chain and hostname verification***| Leave unselected |
     | ***Region*** | us-east-2 |
     | ***Enable Immutable Backups*** | Leave unselected |
+    | ***Bucket*** | kasten-bucket |
 
     ![new profile](./assets/images/new-profile.png)
 
-6. Click ***Save Profile*** and verify the ***STATUS*** of your Location Profile is ***Valid***.
+7. Verify the ***STATUS*** of your Location Profile is ***Valid***.
 
     ![valid profile](./assets/images/valid-profile.png)
 
@@ -85,7 +93,7 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
 *Before performing a Kasten install, the "Primer Script" can quickly spot any potential problems with our cluster configuration.*
 
-1. From the 👍 ***K10 Dashboard*** tab, click ***Applications*** to view all applications discovered by K10 on the cluster.
+1. Click ***< Dashboard*** to return to the Kasten main dashboard, click ***Applications*** to view all applications discovered by K10 on the cluster.
 
     ![click apps](./assets/images/click-apps.png)
 
@@ -93,9 +101,9 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
     ![create policy button](./assets/images/create-policy-button.png)
 
-3. By default, the policy will generate hourly snapshots of the application with a standard retention policy. Leave these defaults.
+3. Leave the default name and optionally add a comment.  By default, the policy will generate hourly snapshots of the application with a standard retention policy. Leave these defaults.
 
-4. Toggle ***Enable Backups via Snapshot Exports*** to the ON position and select `minio` as the ***Export Location Profile***.
+4. Scroll down slightly and toggle ***Enable Backups via Snapshot Exports*** to the ON position and select `minio` as the ***Export Location Profile***.
 
     ![enable exports](./assets/images/enable-exports.png)
 
@@ -125,4 +133,4 @@ _k10.kasten.io/is-snapshot-class: "true"_
 - Configuring an S3-compatible bucket in Kasten K10 can be done in a few clicks
 - Because Kasten is K8s-native, all actions, policies, resources can be implemented using oc commands or API
 
-Click ***Next*** to proceed to the next exercise.
+Using the menu to the left, click ***Lab 3 - Backup and Restore a Workload*** to proceed to the next exercise.
