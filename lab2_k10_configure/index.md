@@ -74,7 +74,7 @@ _k10.kasten.io/is-snapshot-class: "true"_
     | ***Storage Provider*** | Select *S3 Compatible*<br>(NOTE: This is a separate option from Amazon S3) |
     | ***S3 Access Key*** | `minioaccess` |
     | ***S3 Secret*** | `miniosecret` |
-    | ***Endpoint*** | Paste the URL from Step 2<br>(eg. `http://<bastion_host_FQDN>:9000`) |
+    | ***Endpoint*** | Type _http://_ Paste the URL from Step 2, followed by _:9000_<br>(eg. `http://<bastion_host_FQDN>:9000`) |
     | ***Skip certificate chain and hostname verification***| Leave unselected |
     | ***Region*** | us-east-2 |
     | ***Enable Immutable Backups*** | Leave unselected |
