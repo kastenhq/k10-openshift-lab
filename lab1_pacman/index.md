@@ -61,4 +61,7 @@ nav_order: 1
 - OpenShift makes exposing applications via routes simple
 - Pacman is still fun
 
-Using the menu to the left, click **Lab 2 - Configure Kasten K10** to proceed to the next lab
+<div>
+Continue to 
+<a style="z-index:999999;padding:7px 15px;border-width:2px;border-style:solid;border-radius:8px;font-weight:600;font-size:18px;filter:drop-shadow(0px 0px 15px rgba(26, 19, 72, 0.25));font-family:Guardian Sans, Arial, sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;background:#4C5BDC;border-color:#FFFFFF;color:#FFFFFF" href="./lab2_k10_configure">LAB 2</a>
+</div>
