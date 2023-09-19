@@ -53,9 +53,9 @@ _k10.kasten.io/is-snapshot-class: "true"_
 
     ![Take a Tour](./assets/images/take_a_tour.png)
 
-5.  From the ***K10 Dashboard*** tab, select ***Settings***.
+5.  From the ***K10 Dashboard*** using the menu on the left, navigate to ***Profiles*** > ***Location***
 
-    ![settings](./assets/images/settings.png)
+    ![settings](./assets/images/profiles.png)
 
 6. Under ***Locations***, click the ***+ New Profile*** button.
 
