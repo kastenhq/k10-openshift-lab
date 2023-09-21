@@ -24,8 +24,8 @@ nav_order: 1
     ```bash
     helm install pacman pacman/pacman -n pacman \
     --set route.create=true \
-    --set mongodb.containerSecurityContext.enabled=true \
-    --set mongodb.podSecurityContext.enabled=true \
+    --set mongodb.containerSecurityContext.enabled=false \
+    --set mongodb.podSecurityContext.enabled=false \
     --set containerSecurityContext.runAsNonRoot=true
     ```
 

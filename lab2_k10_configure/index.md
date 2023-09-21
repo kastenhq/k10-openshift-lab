@@ -36,36 +36,37 @@ _k10.kasten.io/is-snapshot-class: "true"_
   {: .warning }
   > This is a lab environment. In production, exporting your backups to the same storage as what you're trying to protect would really defeat the purpose - don't you think?
 
-1.  Find the URL of the Kasten instance by navigating to Networing > Routes in the OpenShift console. Click the Location URL
+1.  In the projects drop-down in OpenShift, select kasten-io.
+2.  Find the URL of the Kasten instance by navigating to Networing > Routes in the OpenShift console. Click the Location URL
     ![Kasten Route](./assets/images/kasten_route.png)
     *Ensure you have the kasten-io project selected*
 
-2.  When prompted for login details, enter the following:
+3.  When prompted for login details, enter the following:
 
       | **Username** | **Password** |
       |---|---|
       | kasten | kasten123 |
 
-3. When prompted, enter your email and organization and accept the EULA:
+4. When prompted, enter your email and organization and accept the EULA:
    ![EULA](./assets/images/eula.png)
 
-4. Take a quick tour if you'd like, otherwise just click "No, Thanks"
+5. Take a quick tour if you'd like, otherwise just click "No, Thanks"
 
     ![Take a Tour](./assets/images/take_a_tour.png)
 
-5.  From the ***K10 Dashboard*** using the menu on the left, navigate to ***Profiles*** > ***Location***
+6.  From the ***K10 Dashboard*** using the menu on the left, navigate to ***Profiles*** > ***Location***
 
     ![settings](./assets/images/profiles.png)
 
-6. Under ***Locations***, click the ***+ New Profile*** button.
+7. Under ***Locations***, click the ***+ New Profile*** button.
 
-7. From the environment configuration details for your cluster, copy the hostname of your bastion host to your clipboard (the part after _lab-user@_). It should look similar to:
+8. From the environment configuration details for your cluster, copy the hostname of your bastion host to your clipboard (the part after _lab-user@_). It should look similar to:
 
     ```bash
     bastion.xyza.sandbox1234.opentlc.com
     ```
 
-5. Fill out the following fields:
+9. Fill out the following fields:
 
     | **Field** | **Value** |
     |---|---|
@@ -76,12 +77,12 @@ _k10.kasten.io/is-snapshot-class: "true"_
     | ***Endpoint*** | Type _http://_ Paste the URL from Step 2, followed by _:9000_<br>(eg. `http://<bastion_host_FQDN>:9000`) |
     | ***Skip certificate chain and hostname verification***| Leave unselected |
     | ***Region*** | us-east-2 |
-    | ***Enable Immutable Backups*** | Leave unselected |
     | ***Bucket*** | kasten-bucket |
+    | ***Enable Immutable Backups*** | Leave unselected |
 
     ![new profile](./assets/images/new-profile.png)
 
-7. Verify the ***STATUS*** of your Location Profile is ***Valid***.
+10. Verify the ***STATUS*** of your Location Profile is ***Valid***.
 
     ![valid profile](./assets/images/valid-profile.png)
 
