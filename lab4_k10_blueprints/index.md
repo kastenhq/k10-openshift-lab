@@ -48,18 +48,18 @@ The good news is our Pacman application leverages an underlying Bitnami instance
         apiVersion: cr.kanister.io/v1alpha1
         kind: Blueprint
         metadata:
-        name: mongo-hooks
+          name: mongo-hooks
         actions:
-        backupPrehook:
+          backupPrehook:
             phases:
             - func: KubeExec
-            name: lockMongo
-            objects:
+              name: lockMongo
+              objects:
                 mongoDbSecret:
-                kind: Secret
-                name: 'pacman-mongodb'
-                namespace: '{{ .Deployment.Namespace }}'
-            args:
+                  kind: Secret
+                  name: 'pacman-mongodb'
+                  namespace: '{{ .Deployment.Namespace }}'
+              args:
                 namespace: "{{ .Deployment.Namespace }}"
                 pod: "{{ index .Deployment.Pods 0 }}"
                 container: mongodb
@@ -71,18 +71,18 @@ The good news is our Pacman application leverages an underlying Bitnami instance
                 - pipefail
                 - -c
                 - |
-                export MONGODB_ROOT_PASSWORD='{{ index .Phases.lockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
-                mongosh --authenticationDatabase admin -u root -p "${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncLock()"
-        backupPosthook:
+                  export MONGODB_ROOT_PASSWORD='{{ index .Phases.lockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
+                  mongosh --authenticationDatabase admin -u root -p "${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncLock()"
+          backupPosthook:
             phases:
             - func: KubeExec
-            name: unlockMongo
-            objects:
+              name: unlockMongo
+              objects:
                 mongoDbSecret:
-                kind: Secret
-                name: 'pacman-mongodb'
-                namespace: '{{ .Deployment.Namespace }}'
-            args:
+                  kind: Secret
+                  name: 'pacman-mongodb'
+                  namespace: '{{ .Deployment.Namespace }}'
+              args:
                 namespace: "{{ .Deployment.Namespace }}"
                 pod: "{{ index .Deployment.Pods 0 }}"
                 container: mongodb
@@ -94,8 +94,8 @@ The good news is our Pacman application leverages an underlying Bitnami instance
                 - pipefail
                 - -c
                 - |
-                export MONGODB_ROOT_PASSWORD='{{ index .Phases.unlockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
-                mongosh --authenticationDatabase admin -u root -p "${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncUnlock()"
+                  export MONGODB_ROOT_PASSWORD='{{ index .Phases.unlockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
+                  mongosh --authenticationDatabase admin -u root -p "${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncUnlock()"
 {% endraw %}
 
 4. Click **Validate and Save**
@@ -139,6 +139,8 @@ our blueprint to our pacman application via namespace. Click **Add New Constrain
 
 9. For the **Type** Constraint, specify the following:
 
+    | **Group**    | [leave blank]  |
+    | **Version**  | [leave blank]  |
     | **Resource** | deployments    |
     | **Name**     | pacman-mongodb |
 

@@ -83,7 +83,9 @@ Part 3. Recover Our Score
 
     ![Restore Volume](./assets/images/volume_only_restore.png)
 
-6. Click Restore.
+6. Click **Restore**.
+
+7. Click **Restore** when prompted.
 
 7. Return to the Dashboard by clicking on the **< Dashboard** link in the upper left corner
 

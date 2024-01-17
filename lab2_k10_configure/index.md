@@ -84,7 +84,9 @@ nav_order: 2
 
     ![new profile](./assets/images/new-profile.png)
 
-10. Verify the ***STATUS*** of your Location Profile is ***Valid***.
+10. Click **Save Profile**
+
+11. Verify the ***STATUS*** of your Location Profile is ***Valid***.
 
     ![valid profile](./assets/images/valid-profile.png)
 

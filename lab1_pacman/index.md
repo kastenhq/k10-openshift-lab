@@ -50,6 +50,10 @@ nav_order: 1
 
 3. Click on the Location to launch pacman
 
+    {: .note }
+    > If pacman doesn't load in the browser, ensure that the address bar is using HTTP (http://pacman-route-pacman), _not_ HTTPS
+    > Occasionally browsers may try to force you to an HTTPS page which will not work for our default pacman app
+
 4. Play a short game, and enter your name once you're done to add your name to the leaderboard.
 
     ![pacman game](./assets/images/pacman_game.png)
