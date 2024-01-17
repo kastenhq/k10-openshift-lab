@@ -97,6 +97,8 @@ The good news is our Pacman application leverages an underlying Bitnami instance
                   export MONGODB_ROOT_PASSWORD='{{ index .Phases.unlockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
                   mongosh --authenticationDatabase admin -u root -p "${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncUnlock()"
 {% endraw %}
+    {: .important }
+    > In YAML, spacing is important, so ensure the formatting is copy and pasted correctly without modifications to the spaces
 
 4. Click **Validate and Save**
 
