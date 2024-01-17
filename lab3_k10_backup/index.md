@@ -108,18 +108,6 @@ Part 4. Takeaways
 - We have granular control over which components we wish to recover and/or overwrite
 
 
-🏁 Part 5. Conclusion
-=====================
-
-Congratulations, you finished the Kasten K10 Demo on Red Hat OpenShift! While we only covered a simple
-backup and restore in this demo, Kasten can do much more, such as:
-
-- Backup and protect advanced workloads deployed on OpenShift in a crash-consistent manner (e.g. Databases)
-- Backup and protect OpenShift Virtualization VM workloads
-- Prevent data loss and help you quickly recover in the event of a disaster (e.g. a Ransomware attack)
-- Migrate application and VM workloads from non-OpenShift K8s clusters to OpenShift
-- Migrate workloads from on-premises to the cloud, or vice versa
-- Integrate with CI/CD pipelines to automatically backup and protect workloads as they are deployed
-
-
-**To learn more visit [kasten.io](https://kasten.io)**
+<div>
+<a style="z-index:999999;padding:7px 15px;border-width:2px;border-style:solid;border-radius:8px;font-weight:600;font-size:18px;filter:drop-shadow(0px 0px 15px rgba(26, 19, 72, 0.25));font-family:Guardian Sans, Arial, sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;background:#4C5BDC;border-color:#FFFFFF;color:#FFFFFF" href="../lab4_k10_blueprints">Continue to LAB 4</a>
+</div>

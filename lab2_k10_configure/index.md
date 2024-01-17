@@ -6,11 +6,13 @@ nav_order: 2
 
 📖 Part 1. Configure cluster storage for K10
 ======================================
-*Prior to configuring backups, we need to ensure our cluster storage is capable of performing snapshots of our persistent data workloads.
-Because our cluster is deployed on top of Amazon EC2, we can leverage EBS storage and it's associated CSI driver to perform volume snapshot operations.
 
-To do so, we need to ensure our VolumeSnapshotClass object created on the cluster for the ebs.csi.aws.com provisioner is correctly annotated.  We need to add the annotation
-_k10.kasten.io/is-snapshot-class: "true"_
+{: .important }
+> Prior to configuring backups, we need to ensure our cluster storage is capable of performing snapshots of our persistent data workloads.
+> Because our cluster is deployed on top of Amazon EC2, we can leverage EBS storage and it's associated CSI driver to perform volume snapshot operations.
+> 
+> To do so, we need to ensure our VolumeSnapshotClass object created on the cluster for the ebs.csi.aws.com provisioner is correctly annotated.  We need to add the annotation
+> _k10.kasten.io/is-snapshot-class: "true"_
 
 1. On the bastion host, run the following command to patch the csi-aws-vsc VolumeSnapshotClass so K10 can use it to perform snapshot operations
 
