@@ -86,6 +86,16 @@ nav_order: 2
 
 10. Click **Save Profile**
 
+    {: .note }
+    > Occassionally, the Minio server fails to start during the lab's provisioning. If this happens, you will see an error at this step stating **"There was a problem validating the profile"**:
+    > ![Problem Validating Profile](./assets/images/problem_validating_profile.png)
+    > If this occurs, you can manually start the server on the bastion host by connecting to it via SSH and running the following two commands:
+    > ```bash
+    > sudo su ec2-user
+    > /usr/local/bin/minio server /home/ec2-user/minio --console-address :9090 >/dev/null 2>&1 &
+    > ```
+    > After doing so, return to the Kasten UI and click **Save Profile** again and Kasten should be able to validate the location profile.
+
 11. Verify the ***STATUS*** of your Location Profile is ***Valid***.
 
     ![valid profile](./assets/images/valid-profile.png)

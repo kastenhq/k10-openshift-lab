@@ -180,7 +180,7 @@ and you should see the blueprint we just created automatically bound to the **pa
     ![Pacman Backup Completed](./assets/images/pacman-backup_completed.png)
 
 
-Part 2. Takeaways
+Part 4. Takeaways
 ====================
 
 - Kasten supports multiple backup types, including crash consistent, application consistent, and logical
