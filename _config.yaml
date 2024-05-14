@@ -54,7 +54,7 @@ kramdown:
       line_numbers: false
 
 nav_external_links:
-  - title: Kasten Homepage
-    url: https://kasten.io
-  - title: Kasten K10 OpenShift Operator
+  - title: Veeam Kasten Homepage
+    url: https://www.veeam.com/products/cloud/kubernetes-data-protection.html
+  - title: Veeam Kasten OpenShift Operator
     url: https://marketplace.redhat.com/en-us/products/kasten-k10

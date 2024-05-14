@@ -55,7 +55,7 @@ Part 2. Simulated Attack
 Part 3. Recover Our Score
 ==========================
 
-1. No fear, let's restore our backup.  Click on the Kasten K10 tab in your browser and return to the main dashboard by clicking on **< Dashboard**
+1. No fear, let's restore our backup.  Click on the Kasten tab in your browser and return to the main dashboard by clicking on **< Dashboard**
 
 2. Click __Compliant__ in the Applications modal.
 
@@ -103,7 +103,7 @@ Part 3. Recover Our Score
 Part 4. Takeaways
 ====================
 
-- Kasten K10 automatically interrogates and detects namespaces on the cluster
+- Kasten automatically interrogates and detects namespaces on the cluster
 - Backup jobs are configured on a per-namespace basis and can be configured quickly
 - We can easily monitor actions via the Kasten UI
 - We have granular control on how we restore from backup, including whether from on-cluster or exported storage

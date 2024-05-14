@@ -7,7 +7,7 @@ nav_order: 4
 📖 Part 1. Understanding Backups
 ============================================
 
-In the previous labs, you saw how easily a user can setup Kasten K10 and perform a basic backup and restore operation. In order to support the broad Kubernetes ecosystem of distributions and storage solutions, as well as the variety of stateful apps running on top, K10 provides a number of methods for capturing data and ensuring its consistency.
+In the previous labs, you saw how easily a user can setup Kasten and perform a basic backup and restore operation. In order to support the broad Kubernetes ecosystem of distributions and storage solutions, as well as the variety of stateful apps running on top, Kasten provides a number of methods for capturing data and ensuring its consistency.
 
 The previous backup and restores were accomplished using the underlying storage's volumesnapshot capability to perform
 our backup operation for the disks attached to our application, known as Persistent Volume Claims (PVCs). Kasten can create storage snapshots via any CSI driver that supports VolumeSnapshots API
@@ -192,7 +192,7 @@ Part 4. Takeaways
 🏁 Part 5. Conclusion
 =====================
 
-Congratulations, you finished the Kasten K10 Demo on Red Hat OpenShift! While we only covered a simple crash consistent and application consistent
+Congratulations, you finished the Kasten Demo on Red Hat OpenShift! While we only covered a simple crash consistent and application consistent
 backup and restore in this demo, Kasten can do much more, such as:
 
 - Backup and protect off-cluster workloads (e.g. RDS, Azure CosmosDB, etc)

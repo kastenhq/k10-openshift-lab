@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Lab 2 - Configure Kasten K10
+title: Lab 2 - Configure Kasten
 nav_order: 2
 ---
 
-📖 Part 1. Configure cluster storage for K10
+📖 Part 1. Configure cluster storage for Kasten
 ======================================
 
 {: .important }
@@ -14,7 +14,7 @@ nav_order: 2
 > To do so, we need to ensure our VolumeSnapshotClass object created on the cluster for the ebs.csi.aws.com provisioner is correctly annotated.  We need to add the annotation
 > _k10.kasten.io/is-snapshot-class: "true"_
 
-1. On the bastion host, run the following command to patch the csi-aws-vsc VolumeSnapshotClass so K10 can use it to perform snapshot operations
+1. On the bastion host, run the following command to patch the csi-aws-vsc VolumeSnapshotClass so Kasten can use it to perform snapshot operations
 
     ```bash
     oc annotate volumesnapshotclass $(oc get volumesnapshotclass \
@@ -56,7 +56,7 @@ nav_order: 2
 
     ![Take a Tour](./assets/images/take_a_tour.png)
 
-6.  From the ***K10 Dashboard*** using the menu on the left, navigate to ***Profiles*** > ***Location***
+6.  From the ***Kasten Dashboard*** using the menu on the left, navigate to ***Profiles*** > ***Location***
 
     ![settings](./assets/images/profiles.png)
 
@@ -100,14 +100,14 @@ nav_order: 2
 
     ![valid profile](./assets/images/valid-profile.png)
 
-    *This indicates K10 was able to successfully authenticate and access the specified object storage bucket.*
+    *This indicates Kasten was able to successfully authenticate and access the specified object storage bucket.*
 
 📖 Part 3. Create A Policy
 ==========================
 
 *Before performing a Kasten install, the "Primer Script" can quickly spot any potential problems with our cluster configuration.*
 
-1. Click ***< Dashboard*** to return to the Kasten main dashboard, click ***Applications*** to view all applications discovered by K10 on the cluster.
+1. Click ***< Dashboard*** to return to the Kasten main dashboard, click ***Applications*** to view all applications discovered by Kasten on the cluster.
 
     ![click apps](./assets/images/click-apps.png)
 
@@ -134,7 +134,7 @@ nav_order: 2
 
     ![policy yaml](./assets/images/policy-yaml.png)
 
-    As native Kubernetes resources, K10 policies, profiles, and even running backups or restores can be easily implemented via `oc` or API. Exposing the YAML through the UI makes it easy for administrators to copy and modify existing examples of K10 resources or actions.
+    As native Kubernetes resources, Kasten policies, profiles, and even running backups or restores can be easily implemented via `oc` or API. Exposing the YAML through the UI makes it easy for administrators to copy and modify existing examples of Kasten resources or actions.
 
 8. Click ***Cancel*** to close the YAML window.
 
@@ -144,7 +144,7 @@ nav_order: 2
 
 - Local snapshots are not backups
 - Configuring off-cluster storage for backup is a good idea
-- Configuring an S3-compatible bucket in Kasten K10 can be done in a few clicks
+- Configuring an S3-compatible bucket in Kasten can be done in a few clicks
 - Because Kasten is K8s-native, all actions, policies, resources can be implemented using oc commands or API
 
 <div>
