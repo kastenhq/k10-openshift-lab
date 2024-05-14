@@ -6,7 +6,7 @@ nav_order: 0
 
 # Kasten by Veeam and Red Hat OpenShift Demo
 
-![Kasten and OpenShift Logos](./assets/images/joint_logo.jpg "Kasten by Veeam and Red Hat OpenShift")
+![Kasten and OpenShift Logos](./assets/images/ocp_veeam_kasten.png "Kasten by Veeam and Red Hat OpenShift")
 
 Welcome to the **Kasten by Veeam and Red Hat OpenShift Demo**.  In the labs contained on this site, we will be exploring how to quickly and easily implement Data Protection for Red Hat OpenShift clusters using Kasten K10 by Veeam.
 
